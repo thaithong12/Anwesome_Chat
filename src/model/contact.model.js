@@ -11,4 +11,9 @@ let ContactSchema = new Schema({
     updatedAt : {type : Number ,default : null},
 });
 
+ContactSchema.statics ={
+    createNew(item) {
+        return this.create(item)
+    }
+}
 module.exports = mongooes.model("contact", ContactSchema);
